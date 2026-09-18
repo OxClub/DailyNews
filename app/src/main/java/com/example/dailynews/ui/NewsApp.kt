@@ -1,4 +1,5 @@
 package com.example.dailynews.ui
+@file:OptIn(androidx.compose.material3.ExperimentalMaterial3Api::class)
 
 import android.content.Intent
 import android.net.Uri
