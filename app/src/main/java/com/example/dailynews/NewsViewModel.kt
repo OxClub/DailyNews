@@ -41,7 +41,7 @@ class NewsViewModel(app: Application) : AndroidViewModel(app) {
             try {
                 _articles.value = api.topHeadlines(category)
             } catch (e: Exception) {
-                _error.value = "Unable to load news. Check your internet connection."
+                _error.value = "News error: ${e.message ?: e.javaClass.simpleName}"
             } finally {
                 _loading.value = false
             }
