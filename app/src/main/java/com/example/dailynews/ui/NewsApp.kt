@@ -19,7 +19,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import kotlinx.coroutines.launch
-import androidx.compose.material3.NavigationBarItem
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -1380,18 +1379,24 @@ private fun BottomItem(
     selected: Boolean,
     onClick: () -> Unit
 ) {
-    NavigationBarItem(
-        selected = selected,
-        onClick = onClick,
-        icon = {
-            Icon(icon, null)
-        },
-        label = {
-            Text(title)
-        }
-    )
+    Column(
+        modifier = Modifier
+            .clickable(onClick = onClick)
+            .padding(horizontal = 12.dp, vertical = 6.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Icon(
+            icon,
+            contentDescription = title,
+            tint = if (selected) MaterialTheme.colorScheme.primary else Gray
+        )
+        Text(
+            title,
+            fontSize = 11.sp,
+            color = if (selected) MaterialTheme.colorScheme.primary else Gray
+        )
+    }
 }
-
 @Composable
 private fun AdBanner() {
     AndroidView(
