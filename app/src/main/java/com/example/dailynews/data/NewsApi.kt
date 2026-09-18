@@ -11,21 +11,58 @@ class NewsApi(private val key: String) {
 
     private val client = OkHttpClient()
 
-    suspend fun topHeadlines(category: String): List<Article> =
+    suspend fun topHeadlines(
+        category: String,
+        page: Int = 1
+    ): List<Article> {
+        val query = when (category) {
+            "general" -> "news OR world OR latest"
+            "world" -> "world news"
+            "india" -> "India news"
+            "business" -> "business OR economy OR markets"
+            "technology" -> "technology OR AI OR software"
+            "sports" -> "sports"
+            "entertainment" -> "entertainment OR movies OR music"
+            "science" -> "science OR space"
+            "health" -> "health OR medicine"
+            else -> category
+        }
+
+        return request(
+            "https://newsapi.org/v2/everything?q=" +
+                URLEncoder.encode(query, "UTF-8") +
+                "&language=en&pageSize=50&page=$page" +
+                "&sortBy=publishedAt&apiKey=$key"
+        )
+    }
+
+    suspend fun trending(page: Int = 1): List<Article> =
         request(
-            "https://newsapi.org/v2/top-headlines?country=in&pageSize=50&apiKey=$key" +
-                if (category != "general") "&category=$category" else ""
+            "https://newsapi.org/v2/everything?q=" +
+                URLEncoder.encode(
+                    "breaking OR trending OR latest",
+                    "UTF-8"
+                ) +
+                "&language=en&pageSize=50&page=$page" +
+                "&sortBy=publishedAt&apiKey=$key"
         )
 
-    suspend fun search(query: String): List<Article> =
+    suspend fun search(
+        query: String,
+        page: Int = 1
+    ): List<Article> =
         request(
-            "https://newsapi.org/v2/everything?q=${URLEncoder.encode(query, "UTF-8")}" +
-                "&language=en&pageSize=50&sortBy=publishedAt&apiKey=$key"
+            "https://newsapi.org/v2/everything?q=" +
+                URLEncoder.encode(query, "UTF-8") +
+                "&language=en&pageSize=50&page=$page" +
+                "&sortBy=publishedAt&apiKey=$key"
         )
 
     private suspend fun request(url: String): List<Article> =
         withContext(Dispatchers.IO) {
-            require(key.isNotBlank()) { "NEWS_API_KEY is missing" }
+            require(key.isNotBlank()) {
+                "NEWS_API_KEY is missing"
+            }
 
             val response = client.newCall(
                 Request.Builder()
