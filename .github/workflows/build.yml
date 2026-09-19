@@ -33,11 +33,13 @@ jobs:
         run: |
           gradle --no-daemon assembleDebug -PNEWS_API_KEY="$NEWS_API_KEY"
 
-      - name: Get APK signing SHA
+            - name: Get Debug Keystore SHA
         run: |
-          APK=$(find app/build/outputs/apk -name "*.apk" | head -1)
-          echo "APK: $APK"
-          keytool -printcert -jarfile "$APK"
+          keytool -list -v \
+            -keystore "$HOME/.android/debug.keystore" \
+            -alias androiddebugkey \
+            -storepass android \
+            -keypass android
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
