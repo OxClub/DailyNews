@@ -33,13 +33,14 @@ jobs:
         run: |
           gradle --no-daemon assembleDebug -PNEWS_API_KEY="$NEWS_API_KEY"
 
-            - name: Get Debug Keystore SHA
+      - name: Get Debug Keystore SHA
         run: |
           keytool -list -v \
             -keystore "$HOME/.android/debug.keystore" \
             -alias androiddebugkey \
             -storepass android \
-            -keypass android
+            -keypass android \
+            | grep -E "SHA1:|SHA256:"
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
