@@ -1,0 +1,29 @@
+name: ChatGPT Automated Code Review
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+# This block forces GitHub to give the script full read and write clearance
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  chatgpt_review:
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Pull down your repository code (app folder, configs, etc.)
+      - name: Checkout Repository Code
+        uses: actions/checkout@v4
+
+      # Step 2: Run the ChatGPT review engine using your OpenAI Key
+      - name: Run ChatGPT Code Reviewer
+        uses: anc95/ChatGPT-Code-Review@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          # Optional adjustments:
+          OPENAI_API_MODEL: "gpt-4o" # Uses the smart GPT-4o model
+          LANGUAGE: "English"
+          
