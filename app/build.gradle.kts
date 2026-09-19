@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.dailynews"
+    namespace = "com.oxclub.dailynews"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.dailynews"
+        applicationId = "com.oxclub.dailynews"
         minSdk = 26
         targetSdk = 35
         versionCode = 1

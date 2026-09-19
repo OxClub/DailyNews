@@ -1,4 +1,4 @@
-package com.example.dailynews.ui.screens.info
+package com.oxclub.dailynews.ui.screens.info
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*

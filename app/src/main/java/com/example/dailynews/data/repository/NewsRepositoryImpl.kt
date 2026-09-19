@@ -1,12 +1,12 @@
-package com.example.dailynews.data.repository
+package com.oxclub.dailynews.data.repository
 
-import com.example.dailynews.data.local.ArticleDao
-import com.example.dailynews.data.local.toArticle
-import com.example.dailynews.data.local.toEntity
-import com.example.dailynews.data.remote.NewsApiService
-import com.example.dailynews.domain.model.Article
-import com.example.dailynews.domain.repository.NewsRepository
-import com.example.dailynews.util.Resource
+import com.oxclub.dailynews.data.local.ArticleDao
+import com.oxclub.dailynews.data.local.toArticle
+import com.oxclub.dailynews.data.local.toEntity
+import com.oxclub.dailynews.data.remote.NewsApiService
+import com.oxclub.dailynews.domain.model.Article
+import com.oxclub.dailynews.domain.repository.NewsRepository
+import com.oxclub.dailynews.util.Resource
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import java.io.IOException

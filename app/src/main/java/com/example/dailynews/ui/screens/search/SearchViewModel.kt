@@ -1,9 +1,9 @@
-package com.example.dailynews.ui.screens.search
+package com.oxclub.dailynews.ui.screens.search
 
 import androidx.lifecycle.*
-import com.example.dailynews.domain.model.Article
-import com.example.dailynews.domain.repository.NewsRepository
-import com.example.dailynews.util.Resource
+import com.oxclub.dailynews.domain.model.Article
+import com.oxclub.dailynews.domain.repository.NewsRepository
+import com.oxclub.dailynews.util.Resource
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 

@@ -1,4 +1,4 @@
-package com.example.dailynews.data
+package com.oxclub.dailynews.data
 
 import com.google.gson.Gson
 import kotlinx.coroutines.Dispatchers

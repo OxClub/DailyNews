@@ -1,4 +1,4 @@
-package com.example.dailynews.ui.navigation
+package com.oxclub.dailynews.ui.navigation
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
@@ -9,13 +9,13 @@ import androidx.compose.foundation.layout.padding
 import androidx.navigation.NavType
 import androidx.navigation.compose.*
 import androidx.navigation.navArgument
-import com.example.dailynews.ui.screens.article.ArticleDetailScreen
-import com.example.dailynews.ui.screens.bookmarks.BookmarksScreen
-import com.example.dailynews.ui.screens.categories.CategoriesScreen
-import com.example.dailynews.ui.screens.home.HomeScreen
-import com.example.dailynews.ui.screens.info.AboutScreen
-import com.example.dailynews.ui.screens.info.PrivacyPolicyScreen
-import com.example.dailynews.ui.screens.search.SearchScreen
+import com.oxclub.dailynews.ui.screens.article.ArticleDetailScreen
+import com.oxclub.dailynews.ui.screens.bookmarks.BookmarksScreen
+import com.oxclub.dailynews.ui.screens.categories.CategoriesScreen
+import com.oxclub.dailynews.ui.screens.home.HomeScreen
+import com.oxclub.dailynews.ui.screens.info.AboutScreen
+import com.oxclub.dailynews.ui.screens.info.PrivacyPolicyScreen
+import com.oxclub.dailynews.ui.screens.search.SearchScreen
 
 @Composable
 fun NavGraph() {

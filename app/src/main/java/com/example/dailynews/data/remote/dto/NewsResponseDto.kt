@@ -1,4 +1,4 @@
-package com.example.dailynews.data.remote.dto
+package com.oxclub.dailynews.data.remote.dto
 
 import com.google.gson.annotations.SerializedName
 

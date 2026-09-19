@@ -1,8 +1,8 @@
-package com.example.dailynews.data.local
+package com.oxclub.dailynews.data.local
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.example.dailynews.domain.model.Article
+import com.oxclub.dailynews.domain.model.Article
 
 @Entity(tableName = "articles")
 data class ArticleEntity(

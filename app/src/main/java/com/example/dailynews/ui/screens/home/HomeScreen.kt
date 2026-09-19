@@ -1,4 +1,4 @@
-package com.example.dailynews.ui.screens.home
+package com.oxclub.dailynews.ui.screens.home
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -11,11 +11,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.dailynews.DailyNewsApp
-import com.example.dailynews.domain.model.Article
-import com.example.dailynews.ui.components.AdBanner
-import com.example.dailynews.ui.components.ArticleCard
-import com.example.dailynews.util.Resource
+import com.oxclub.dailynews.DailyNewsApp
+import com.oxclub.dailynews.domain.model.Article
+import com.oxclub.dailynews.ui.components.AdBanner
+import com.oxclub.dailynews.ui.components.ArticleCard
+import com.oxclub.dailynews.util.Resource
 import androidx.compose.ui.platform.LocalContext
 
 @Composable

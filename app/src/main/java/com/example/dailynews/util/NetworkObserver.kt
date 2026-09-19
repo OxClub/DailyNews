@@ -1,4 +1,4 @@
-package com.example.dailynews.util
+package com.oxclub.dailynews.util
 
 import android.content.Context
 import android.net.ConnectivityManager

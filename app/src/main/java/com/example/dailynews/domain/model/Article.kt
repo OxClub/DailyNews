@@ -1,4 +1,4 @@
-package com.example.dailynews.domain.model
+package com.oxclub.dailynews.domain.model
 
 data class Article(
     val url: String,

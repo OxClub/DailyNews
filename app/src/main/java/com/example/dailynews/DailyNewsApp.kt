@@ -1,10 +1,10 @@
-package com.example.dailynews
+package com.oxclub.dailynews
 
 import android.app.Application
 import androidx.room.Room
-import com.example.dailynews.data.local.NewsDatabase
-import com.example.dailynews.data.remote.NewsApiService
-import com.example.dailynews.data.repository.NewsRepositoryImpl
+import com.oxclub.dailynews.data.local.NewsDatabase
+import com.oxclub.dailynews.data.remote.NewsApiService
+import com.oxclub.dailynews.data.repository.NewsRepositoryImpl
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

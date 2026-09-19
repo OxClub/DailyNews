@@ -1,7 +1,7 @@
 @file:OptIn(androidx.compose.material3.ExperimentalMaterial3Api::class)
 
-package com.example.dailynews.ui
-import com.example.dailynews.BuildConfig
+package com.oxclub.dailynews.ui
+import com.oxclub.dailynews.BuildConfig
 
 import android.content.Intent
 import android.webkit.WebView
@@ -33,8 +33,8 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
-import com.example.dailynews.NewsViewModel
-import com.example.dailynews.data.Article
+import com.oxclub.dailynews.NewsViewModel
+import com.oxclub.dailynews.data.Article
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdSize
 import com.google.android.gms.ads.AdView

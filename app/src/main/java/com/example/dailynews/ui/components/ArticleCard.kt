@@ -1,4 +1,4 @@
-package com.example.dailynews.ui.components
+package com.oxclub.dailynews.ui.components
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -13,7 +13,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
-import com.example.dailynews.domain.model.Article
+import com.oxclub.dailynews.domain.model.Article
 
 @Composable
 fun ArticleCard(

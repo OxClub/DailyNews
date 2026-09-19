@@ -1,10 +1,10 @@
-package com.example.dailynews
+package com.oxclub.dailynews
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.dailynews.data.Article
-import com.example.dailynews.data.NewsApi
+import com.oxclub.dailynews.data.Article
+import com.oxclub.dailynews.data.NewsApi
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.flow.MutableStateFlow

@@ -1,4 +1,4 @@
-package com.example.dailynews.ui.navigation
+package com.oxclub.dailynews.ui.navigation
 
 sealed class Screen(val route: String) {
     data object Home : Screen("home")

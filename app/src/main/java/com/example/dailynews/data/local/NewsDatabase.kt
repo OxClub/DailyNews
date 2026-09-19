@@ -1,4 +1,4 @@
-package com.example.dailynews.data.local
+package com.oxclub.dailynews.data.local
 
 import androidx.room.Database
 import androidx.room.RoomDatabase

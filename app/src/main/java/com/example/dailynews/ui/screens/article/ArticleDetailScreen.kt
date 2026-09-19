@@ -1,4 +1,4 @@
-package com.example.dailynews.ui.screens.article
+package com.oxclub.dailynews.ui.screens.article
 
 import android.content.Intent
 import android.net.Uri
@@ -9,7 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
-import com.example.dailynews.ui.components.AdBanner
+import com.oxclub.dailynews.ui.components.AdBanner
 
 @Composable
 fun ArticleDetailScreen(encodedUrl: String) {

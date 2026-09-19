@@ -1,4 +1,4 @@
-package com.example.dailynews.ui.theme
+package com.oxclub.dailynews.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme

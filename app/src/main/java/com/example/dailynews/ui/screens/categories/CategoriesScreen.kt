@@ -1,4 +1,4 @@
-package com.example.dailynews.ui.screens.categories
+package com.oxclub.dailynews.ui.screens.categories
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn

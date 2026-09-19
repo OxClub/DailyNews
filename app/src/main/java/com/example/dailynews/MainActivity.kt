@@ -1,4 +1,4 @@
-package com.example.dailynews
+package com.oxclub.dailynews
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -10,7 +10,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.core.view.WindowCompat
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.google.android.gms.ads.MobileAds
-import com.example.dailynews.ui.NewsApp
+import com.oxclub.dailynews.ui.NewsApp
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

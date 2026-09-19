@@ -1,4 +1,4 @@
-package com.example.dailynews.data
+package com.oxclub.dailynews.data
 
 data class Article(
     val title: String,

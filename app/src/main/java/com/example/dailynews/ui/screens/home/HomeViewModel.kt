@@ -1,10 +1,10 @@
-package com.example.dailynews.ui.screens.home
+package com.oxclub.dailynews.ui.screens.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
-import com.example.dailynews.domain.model.Article
-import com.example.dailynews.domain.repository.NewsRepository
+import com.oxclub.dailynews.domain.model.Article
+import com.oxclub.dailynews.domain.repository.NewsRepository
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 
@@ -30,8 +30,8 @@ class HomeViewModel(private val repository: NewsRepository) : ViewModel() {
             _loading.value = true
             _error.value = null
             when (val result = repository.refreshNews(value)) {
-                is com.example.dailynews.util.Resource.Success -> Unit
-                is com.example.dailynews.util.Resource.Error -> _error.value = result.message
+                is com.oxclub.dailynews.util.Resource.Success -> Unit
+                is com.oxclub.dailynews.util.Resource.Error -> _error.value = result.message
             }
             _loading.value = false
         }

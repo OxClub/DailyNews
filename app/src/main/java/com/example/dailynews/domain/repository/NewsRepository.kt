@@ -1,7 +1,7 @@
-package com.example.dailynews.domain.repository
+package com.oxclub.dailynews.domain.repository
 
-import com.example.dailynews.domain.model.Article
-import com.example.dailynews.util.Resource
+import com.oxclub.dailynews.domain.model.Article
+import com.oxclub.dailynews.util.Resource
 import kotlinx.coroutines.flow.Flow
 
 interface NewsRepository {

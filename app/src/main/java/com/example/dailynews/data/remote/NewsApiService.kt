@@ -1,7 +1,7 @@
-package com.example.dailynews.data.remote
+package com.oxclub.dailynews.data.remote
 
-import com.example.dailynews.BuildConfig
-import com.example.dailynews.data.remote.dto.NewsResponseDto
+import com.oxclub.dailynews.BuildConfig
+import com.oxclub.dailynews.data.remote.dto.NewsResponseDto
 import retrofit2.http.GET
 import retrofit2.http.Query
 

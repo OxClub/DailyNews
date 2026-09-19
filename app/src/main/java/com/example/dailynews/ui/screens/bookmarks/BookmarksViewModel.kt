@@ -1,8 +1,8 @@
-package com.example.dailynews.ui.screens.bookmarks
+package com.oxclub.dailynews.ui.screens.bookmarks
 
 import androidx.lifecycle.*
-import com.example.dailynews.domain.model.Article
-import com.example.dailynews.domain.repository.NewsRepository
+import com.oxclub.dailynews.domain.model.Article
+import com.oxclub.dailynews.domain.repository.NewsRepository
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 
