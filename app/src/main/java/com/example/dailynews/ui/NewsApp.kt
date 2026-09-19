@@ -64,7 +64,7 @@ fun NewsApp(
     var searchOpen by remember { mutableStateOf(false) }
     var searchText by remember { mutableStateOf("") }
     var searchResults by remember { mutableStateOf<List<Article>>(emptyList()) }
-    var signedIn by remember { mutableStateOf(false) }
+    val signedIn = true
     var darkMode by remember { mutableStateOf(false) }
     var notifications by remember { mutableStateOf(true) }
 
@@ -110,7 +110,7 @@ fun NewsApp(
                     categories = categories,
                     signedIn = signedIn,
                     onSignIn = {
-                        signedIn = !signedIn
+                        com.google.firebase.auth.FirebaseAuth.getInstance().signOut()
                     },
                     onCategory = { name ->
                         scope.launch {
@@ -478,7 +478,7 @@ fun NewsApp(
                                     darkMode = it
                                 },
                                 onSignIn = {
-                                    signedIn = !signedIn
+                                    com.google.firebase.auth.FirebaseAuth.getInstance().signOut()
                                 }
                             )
                         }
