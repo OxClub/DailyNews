@@ -20,3 +20,4 @@ Kotlin + Jetpack Compose + Material 3 + MVVM + Room + Retrofit + Coil + AdMob ba
 - Publish a real privacy policy and ensure your consent/privacy implementation meets the requirements applicable to your users and ad configuration.
 - Consider moving the news API key behind a backend before commercial release.
 - Replace the sample application ID with your own unique package name.
+# Test for ChatGPT
