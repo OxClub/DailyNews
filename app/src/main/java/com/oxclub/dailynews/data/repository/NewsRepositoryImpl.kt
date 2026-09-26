@@ -19,7 +19,9 @@ class NewsRepositoryImpl(
     private val dao: ArticleDao
 ) : NewsRepository {
 
-    override fun observeCategory(category: String): Flow<List<Article>> =
+    override fun observeCategory(
+        category: String
+    ): Flow<List<Article>> =
         dao.observeCategory(category).map { items ->
             items.map(ArticleEntity::toArticle)
         }
@@ -56,7 +58,9 @@ class NewsRepositoryImpl(
             }
         }
 
-    override suspend fun search(q: String): Resource<List<Article>> =
+    override suspend fun search(
+        q: String
+    ): Resource<List<Article>> =
         request {
             api.search(
                 q = q.trim(),
@@ -68,17 +72,21 @@ class NewsRepositoryImpl(
             ).results.orEmpty().articles("search")
         }
 
-    override suspend fun trending(offset: Int): Resource<List<Article>> =
+    override suspend fun trending(
+        offset: Int
+    ): Resource<List<Article>> =
         request {
-            api.trends(offset = offset)
-                .results
-                .orEmpty()
+            api.trends(
+                offset = offset
+            ).results.orEmpty()
                 .flatMap { it.headlines.orEmpty() }
                 .mapNotNull { it.article() }
                 .distinctBy { it.url }
         }
 
-    override suspend fun toggleBookmark(article: Article) {
+    override suspend fun toggleBookmark(
+        article: Article
+    ) {
         dao.setSaved(article.url, !article.isBookmarked)
     }
 
@@ -96,8 +104,10 @@ class NewsRepositoryImpl(
         }
     }
 
-    private fun query(category: String): String? =
-        when (category.lowercase()) {
+    private fun query(
+        category: String
+    ): String? {
+        return when (category.lowercase()) {
             "top news", "top", "india", "general" -> null
             "business" -> "business OR economy OR markets"
             "technology" -> "technology OR AI OR software"
@@ -109,20 +119,21 @@ class NewsRepositoryImpl(
             "politics" -> "politics OR election OR government"
             else -> category
         }
+    }
 
     private fun List<ArticleDto>.articles(
         category: String
     ): List<Article> {
         return mapNotNull { dto ->
-            val url = dto.url?.trim()
-            val title = clean(dto.title)
+            val articleUrl = dto.url?.trim()
+            val articleTitle = clean(dto.title)
 
-            if (url.isNullOrBlank() || title.isBlank()) {
+            if (articleUrl.isNullOrBlank() || articleTitle.isBlank()) {
                 null
             } else {
                 Article(
-                    url = url,
-                    title = title,
+                    url = articleUrl,
+                    title = articleTitle,
                     description = cleanNullable(dto.description),
                     content = cleanNullable(dto.content),
                     urlToImage = dto.image
@@ -160,7 +171,9 @@ class NewsRepositoryImpl(
         )
     }
 
-    private fun clean(value: String?): String {
+    private fun clean(
+        value: String?
+    ): String {
         return value.orEmpty()
             .replace(Regex("<[^>]*>"), " ")
             .replace("&nbsp;", " ")
@@ -174,7 +187,9 @@ class NewsRepositoryImpl(
             .trim()
     }
 
-    private fun cleanNullable(value: String?): String? {
+    private fun cleanNullable(
+        value: String?
+    ): String? {
         return clean(value).takeIf { it.isNotBlank() }
     }
 }
